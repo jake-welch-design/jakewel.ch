@@ -59,6 +59,10 @@ canvas {
   display: block;
 }
 
+footer {
+  text-align:center
+}
+
 /* button {
   border: none;
   border-radius: 0px;
