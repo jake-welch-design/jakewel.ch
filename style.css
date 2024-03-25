@@ -4,75 +4,183 @@
   src: url(/fonts/Ac437_ToshibaTxL2_8x16.ttf);
 }
 
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+
 /* Global variables */
 :root {
-  --primary-color:rgb(0, 0, 0); 
-  --secondary-color:rgb(255, 255, 255); 
-  --hover-color:rgb(255, 0, 0); 
+  --primary-color: rgb(37, 37, 37);
+  --secondary-color: white;
+  --hover-color: rgb(255, 47, 0);
+  --nav-amount: 7;
 }
 
 /* Global styling */
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   font-family: Font1;
-  background-color:var(--primary-color);
-  color:var(--secondary-color);
+  font-size: 18px;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
 }
 
+a {
+  color: var(--secondary-color);
+}
+
+a:hover {
+  color: var(--primary-color);
+  background-color: --secondary-color;
+}
 
 /* Highlight colors */
 ::selection {
-  color:var(--primary-color);
+  color: var(--primary-color);
   background-color: var(--secondary-color);
 }
 
 ::-webkit-selection {
-  color:var(--primary-color);
+  color: var(--primary-color);
   background-color: var(--secondary-color);
 }
 
 ::-moz-selection {
-  color:var(--primary-color);
+  color: var(--primary-color);
   background-color: var(--secondary-color);
 }
 
-/* Divider styling */
-hr.divider {
-  border-style:dashed;
-  border-color: var(--secondary-color); 
+/* ########################## */
+/* START OF NAVIGATION STYLING  */
+/* ########################## */
+
+.nav {
+  position: fixed;
+  left: 0;
+  width: 150px;
+  height: calc(100% / var(--nav-amount));
+  display: flex;
+  flex-direction: column;
+
+  color: var(--secondary-color);
+  border-right: 1px dashed var(--secondary-color);
+  border-bottom: 1px dashed var(--secondary-color);
+  border-left: 0px;
+
+  justify-content: center;
+  align-items: center;
+
+  padding: 10px;
+  line-height: 13px;
 }
 
-body {
-  margin: 3vw;
+.home {
+  top: 0;
+}
+
+.home:hover {
+  background-color: var(--hover-color);
+  color: var(--secondary-color);
+  border-color: 1px solid var(--hover-color);
+}
+
+.gallery {
+  top: calc(100% / 7);
+}
+
+.gallery:hover {
+  background-color: var(--hover-color);
+  color: var(--secondary-color);
+  border-color: 1px solid var(--hover-color);
+}
+
+.work-bench {
+  top: calc(2 * (100% / var(--nav-amount)));
+}
+
+.work-bench:hover {
+  background-color: var(--hover-color);
+  color: var(--secondary-color);
+  border-color: 1px solid var(--hover-color);
+}
+
+.library {
+  top: calc(3 * (100% / var(--nav-amount)));
+}
+
+.library:hover {
+  background-color: var(--hover-color);
+  color: var(--secondary-color);
+  border-color: 1px solid var(--hover-color);
+}
+
+.desk {
+  top: calc(4 * (100% / var(--nav-amount)));
+}
+
+.desk:hover {
+  background-color: var(--hover-color);
+  color: var(--secondary-color);
+  border-color: 1px solid var(--hover-color);
+}
+
+.links {
+  top: calc(5 * (100% / var(--nav-amount)));
+}
+
+.links:hover {
+  background-color: var(--hover-color);
+  color: var(--secondary-color);
+  border-color: 1px solid var(--hover-color);
+}
+
+.contact {
+  top: calc(6 * (100% / var(--nav-amount)));
+  border-bottom: none;
+  bottom: 0;
+}
+
+.contact:hover {
+  background-color: var(--hover-color);
+  color: var(--secondary-color);
+  border-color: 1px solid var(--hover-color);
+}
+
+/* ########################## */
+/* END OF NAVIGATION STYLING  */
+/* ########################## */
+
+.content {
+  position: fixed;
+  left: 150px;
+  top: 0;
+  width: calc(100% - 150px);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary-color);
+  padding: 10px;
+  padding-left: 20px;
+  overflow: auto;
 }
 
 h1 {
-  padding:1vw;
+  padding: 1vw;
+  text-align: left;
 }
 
 p {
-  padding:1vw;
-}
-
-canvas {
-  display: block;
+  padding: 1vw;
+  text-align: left;
 }
 
 footer {
-  text-align:center
+  text-align: right;
+  font-size: 12px;
+  padding-right: 10px;
+  margin-top: auto;
 }
-
-/* button {
-  border: none;
-  border-radius: 0px;
-  border-color: black;
-  padding: 4px;
-  color: black;
-  background: white;
-}
-
-button:hover {
-  background: black;
-  color: white;
-} */
